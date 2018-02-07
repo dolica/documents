@@ -24,10 +24,10 @@ We have use two physics device make environments.
 
 | Type | Name | CPU | Memory | Disk|
 | ----|----| -----| -----| ----|
-| Docker Manager|
-| Docker Manager|
-| Docker Manager|
-| Docker Worker|
+| Docker Manager|dps-docker-manager01|2vcpu|4GB|50GB|
+| Docker Manager|dps-docker-manager02|2vcpu|4GB|50GB|
+| Docker Manager|dps-docker-manager03|2vcpu|4GB|50GB|
+| Docker Worker|dps-docker01|10vcpu|32GB|
 | Docker Worker|
 | Docker Worker|
 | MDS Server|
