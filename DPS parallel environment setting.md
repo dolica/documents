@@ -31,7 +31,47 @@ We have use two physics device make environments.
 | Docker Worker|dps-docker02|10vcpu|32GB|200GB|
 | Docker Worker|dps-docker03|10vcpu|32GB|200GB|
 | MDS Server|dps-mds|4vcpu|8GB|70GB|
-| HA Server|dps-haproxy|4GB|40GB|
+| HA Server|dps-haproxy|4vcpu|4GB|40GB|
+
+## Setup
+Install docker, ssl cert, and stop firewall service.
+
+### Disable SELinux
+check SeLinux status use the command `sestatus`
+open the file `/etc/sysconfig/selinux` as follow:
+```
+$ vi /etc/sysconfig/selinx
+```
+Then change the directive `SELinux=enforcing` to `SELinux=disabled` as follew:
+```
+SELinux=disabled
+```
+
+
+### Install DockerCE
+1. install required packages.
+```
+$sudo yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+```
+2. use the follow command setup the stable repository.
+```
+$sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+```
+3. Install docker ce 17.12.0, show available packages use `yum list docker-ce --showduplicates` command.
+```
+$sudo yum install -y docker-ce-17.12.0.ce
+```
+
+>>> Note: you can find full install guite in [docker](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce-1).
+
+4. Start up docker service
+```
+$ sudo systemctl start docker
+```
 
 
 You can also:
