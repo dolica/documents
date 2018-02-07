@@ -15,23 +15,23 @@ We have use two physics device make environments.
 
 - dell 740 (include 2 visual machine)
 
-| Type | Name | CPU | Memory | Disk|
+| Type | Name | CPU | Memory | Disk| IP|
 | ----|----| -----| -----| ----|
 | Database | db_res1 | 40vCpu | 126GB| 900GB|
 | Database | db_res2 | 40vCpu | 126GB| 900GB|
 
 - dell 640 (include * visual machine)
 
-| Type | Name | CPU | Memory | Disk|
-| ----|----| -----| -----| ----|
+| Type | Name | CPU | Memory | Disk| IP|
+| ----|----| -----| -----| ----| -|
 | Docker Manager|dps-docker-manager01|2vcpu|4GB|50GB|
 | Docker Manager|dps-docker-manager02|2vcpu|4GB|50GB|
 | Docker Manager|dps-docker-manager03|2vcpu|4GB|50GB|
-| Docker Worker|dps-docker01|10vcpu|32GB|
-| Docker Worker|
-| Docker Worker|
-| MDS Server|
-| HA Server|
+| Docker Worker|dps-docker01|10vcpu|32GB|200GB|
+| Docker Worker|dps-docker02|10vcpu|32GB|200GB|
+| Docker Worker|dps-docker03|10vcpu|32GB|200GB|
+| MDS Server|dps-mds|4vcpu|8GB|70GB|
+| HA Server|dps-haproxy|4GB|40GB|
 
 
 You can also:
