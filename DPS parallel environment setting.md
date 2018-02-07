@@ -37,7 +37,8 @@ We have use two physics device make environments.
 Install docker, ssl cert, and stop firewall service.
 
 ### Disable SELinux
-check SeLinux status use the command `sestatus`
+check SeLinux status use the command `sestatus`,if the selinux status is `enforcing`, you can use follow step disabled it.
+___
 open the file `/etc/sysconfig/selinux` as follow:
 ```
 $ vi /etc/sysconfig/selinx
@@ -46,7 +47,13 @@ Then change the directive `SELinux=enforcing` to `SELinux=disabled` as follew:
 ```
 SELinux=disabled
 ```
+reboot machine and use `sestatus` check selinux status.
 
+### Disable firewall
+```
+$ sudo systemctl stop firewalld   # stop firewalld service
+$ sudo systemctl disable firewalld # disable firewalld auto start
+```
 
 ### Install DockerCE
 1. install required packages.
