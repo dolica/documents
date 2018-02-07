@@ -6,8 +6,8 @@ We have use two physics device make environments.
   - Dell PowerEdge 740:  used for database setup.
 
 ## Device info 
-| Device | CPU | Memory| disk |
-| ------ | ------ | -----| ----|
+| Device | CPU | Memory| disk | IP|
+| ------ | ------ | -----| ----| ----|
 | Dell PowerEdge 740 | 80vcpu | 256G | 2048GB|
 | Dell PowerEdge 640 | 48vcpu | 128G | 1028GB|
 
@@ -16,7 +16,7 @@ We have use two physics device make environments.
 - dell 740 (include 2 visual machine)
 
 | Type | Name | CPU | Memory | Disk| IP|
-| ----|----| -----| -----| ----|
+| ----|----| -----| -----| ----|-----|
 | Database | db_res1 | 40vCpu | 126GB| 900GB|
 | Database | db_res2 | 40vCpu | 126GB| 900GB|
 
