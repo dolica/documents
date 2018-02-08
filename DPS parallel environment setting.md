@@ -81,6 +81,12 @@ $sudo yum install -y docker-ce-17.12.0.ce
 $ sudo systemctl start docker
 ```
 
+5. install bash-completion
+```
+$ yum install -y bash-completion
+```
+After installed bash-completion, logout current session and re-login.
+
 ### SSL certificate setting
 Our docker registry domain is  `asc.registry.com:5043`, we must put the CA key into all work hosts.The ca key location on `/etc/docker` dir.
 
@@ -96,6 +102,24 @@ $ sudo curl -L https://raw.githubusercontent.com/dolica/documents/master/DPS-env
 3. login private docker registry, (admin/admin123 is username/passwd).
 ```
 $ docker login asc.registry.com:5043 --username admin --password admin123
+```
+
+### docker swarm cluster 
+When all host installed docker-ce, you can set up docker swarm cluster in swarm mode.
+1. init docker swarm
+```
+$ docker swarm init --availability drain   #init docker swarm cluster
+```
+2. add worker node and other manager
+On other docker nodes, use follow command join the new cluster.
+```
+$   docker swarm join --token [token]
+```
+You can use `docker swarm join-token [manager|worker]` command on the manager node to get the join token.
+
+3. Change manager node availability
+```
+$ docker node update [node] --availability [drain|active|pause]
 ```
 
 
