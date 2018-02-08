@@ -122,6 +122,16 @@ You can use `docker swarm join-token [manager|worker]` command on the manager no
 $ docker node update [node] --availability [drain|active|pause]
 ```
 
+4. create a new overlay network
+```
+$ docker network create dps-res-net \           #network name is dps-res-net
+--driver=overlay    \           #set driver type is overlay for multinode
+--subnet=172.10.0.0/16 \        #set subnet
+--ip-range=172.10.5.0/24 \
+--gateway=172.10.5.254
+```
+
+
 
 
 You can also:
