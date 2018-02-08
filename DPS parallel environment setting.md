@@ -56,6 +56,7 @@ $ sudo systemctl disable firewalld # disable firewalld auto start
 ```
 
 ### Install DockerCE
+Install docker ce on all visual device with which type is docker.
 1. install required packages.
 ```
 $sudo yum install -y yum-utils \
@@ -79,6 +80,24 @@ $sudo yum install -y docker-ce-17.12.0.ce
 ```
 $ sudo systemctl start docker
 ```
+
+### SSL certificate setting
+Our docker registry domain is  `asc.registry.com:5043`, we must put the CA key into all work hosts.The ca key location on `/etc/docker` dir.
+
+1. create ssl dir
+```
+$ sudo mkdir -p /etc/docker/certs.d/asc.registry.com:5043
+```
+2. download ca key
+```
+$ sudo cd /etc/docker/certs.d/asc.registry.com:5043
+$ sudo curl -L https://raw.githubusercontent.com/dolica/documents/master/DPS-env-script/ca.crt --output ca.crt --silent
+```
+3. login private docker registry, (admin/admin123 is username/passwd).
+```
+$ docker login asc.registry.com:5043 --username admin --password admin123
+```
+
 
 
 You can also:
