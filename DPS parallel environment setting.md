@@ -24,14 +24,14 @@ We have use two physics device make environments.
 
 | Type | Name | CPU | Memory | Disk| IP|
 | ----|----| -----| -----| ----| -|
-| Docker Manager|dps-docker-manager01|2vcpu|4GB|50GB|
-| Docker Manager|dps-docker-manager02|2vcpu|4GB|50GB|
-| Docker Manager|dps-docker-manager03|2vcpu|4GB|50GB|
-| Docker Worker|dps-docker01|10vcpu|32GB|200GB|
-| Docker Worker|dps-docker02|10vcpu|32GB|200GB|
-| Docker Worker|dps-docker03|10vcpu|32GB|200GB|
-| MDS Server|dps-mds|4vcpu|8GB|70GB|
-| HA Server|dps-haproxy|4vcpu|4GB|40GB|
+| Docker Manager|dps-docker-manager01|2vcpu|4GB|50GB|10.1.10.190
+| Docker Manager|dps-docker-manager02|2vcpu|4GB|50GB|10.1.10.192
+| Docker Manager|dps-docker-manager03|2vcpu|4GB|50GB|10.1.10.194
+| Docker Worker|dps-docker01|10vcpu|32GB|200GB|10.1.10.191
+| Docker Worker|dps-docker02|10vcpu|32GB|200GB|10.1.10.193
+| Docker Worker|dps-docker03|10vcpu|32GB|200GB|10.1.10.195
+| MDS Server|dps-mds|4vcpu|8GB|70GB|10.1.10.196
+| HA Server|dps-haproxy|4vcpu|4GB|40GB|10.1.10.199
 
 ## Setup
 Install docker, ssl cert, and stop firewall service.
