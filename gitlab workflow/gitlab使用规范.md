@@ -15,6 +15,7 @@ gitlab中项目成员分为五种角色，当项目为`public`或者`internal`�
 >管理员具备最高级别权限
 
 ### 项目中权限
+---
 
 - Owner：具备项目管理的所有权限
 - Master: 与Owner相比无法删除项目、更改项目名称、变更项目可见级别
@@ -30,6 +31,20 @@ gitlab中项目成员分为五种角色，当项目为`public`或者`internal`�
 2. rebase:把当前分支的提交在另一分支上重新执行。
 3. cherry-pick:把分支或者其他分支的某一次或者莫几次提交，在当前分支上重演，相当于部分提交
 4. patch:把一次或几次提交做成补丁文件，补丁文件可以被应用到其他分支上。
+
+### merge vs rebase
+---
+
+1. git log区别，`merge`命令不保留merge分支的提交信息，`rebase`命名相当于重新在被合并分支执行所有提交所以会保存下所有分支。
+2. 处理冲突方式
+   1. `merge`处理冲突时一次性处理结束所有冲突后，执行`git add .`和`git commit -m'fix conflict'`，产生一个解决冲突提交。
+   2. `rebase`采用交互方式，解决每个冲突后执行`git add .`和`git rebase --continue`，不产生额外commit.
+
+### **merge 和 merge --no-ff的区别**
+---
+
+- 使用`merge`命令如果没有冲突，则不会产生`merge commit`
+- 使用`merge --no-ff`则会强制添加一个`merge commit`
 
 ## 规范说明
 
